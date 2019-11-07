@@ -1,0 +1,11 @@
+#login{
+    width: 100%;
+    position: absolute;
+    top: 0.8em;
+    z-index: 200;
+}
+#login button{
+    float: right;
+    z-index: 200;
+    margin-right: 1em;
+}

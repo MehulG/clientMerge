@@ -1,0 +1,18 @@
+<button mat-raised-button color="primary" (click)="createArticle()" class="publishButton"> <mat-icon aria-hidden="false" aria-label="Example send icon">send</mat-icon>Publish</button>
+ 
+<div class="Form"><form class="example-form" id="form">
+        <input class="input" matInput placeholder="Title" value="" (keyup)="OnChangeTitle($event)"></form><form>
+            <input *ngIf="Off" class="textarea" id="content" matInput placeholder="Write your content here" (keyup)="OnChangeContent($event)">
+            <input *ngIf="Off"class="tags" id="content"matInput placeholder="Tags" value="" (keyup)="OnChangeTags($event)"> 
+        <button mat-fab color="primary" (click) = "add()" ><mat-icon aria-hidden="false" aria-label="Example add icon">add</mat-icon></button>
+      <button mat-fab color="primary" class="add-button" ><mat-icon aria-hidden="false" aria-label="Example add icon">image</mat-icon></button>
+      <button mat-fab color="primary"><mat-icon aria-hidden="false" aria-label="Example add icon">code</mat-icon></button>
+      <button mat-fab color="primary" class="add-button" ><mat-icon aria-hidden="false" aria-label="Example add icon">play_arrow</mat-icon></button>
+      <button mat-fab color="primary"><mat-icon aria-hidden="false" aria-label="Example add icon">link</mat-icon></button>
+      <button mat-fab color="primary"(click) = "add()" class="add-button"><mat-icon aria-hidden="false" aria-label="Example add icon">tags</mat-icon></button>
+ 
+
+    </form>
+    
+</div>
+

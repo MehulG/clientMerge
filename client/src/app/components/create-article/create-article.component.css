@@ -1,0 +1,66 @@
+/* .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+   */
+  .example-full-width {
+    width: 100%;
+  }
+  .Form{
+      /* margin: 2vw; */
+      padding: 8vw;
+      background-color: #F2F6FF;
+      border-style: none;
+  }
+  .textarea{
+    padding: 2vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #F2F6FF;
+    border-radius:40px;
+    height: 10vw;
+    font-size: 14px;
+    width: 90%;
+    background:transparent;
+  }
+  .tags{
+    display: hidden;
+    padding: 1vw;
+    border: 2px solid #F2F6FF;
+    border-radius:40px;
+    height: 40px;
+    font-size: 14px;
+    width: 90%;
+    background:transparent;
+  }
+  .background-colour{
+    background-color: #F2F6FF;
+  }
+  .publishButton{
+    position: absolute;
+    margin-top: 2vw;
+    margin-left: 75%;
+    border-radius: 40px;
+    width: 15vw;
+  }
+ .input{
+   padding: 1vw;
+    border: 2px solid #E2F1FF;
+    border-radius:40px;
+    height: 40px;
+    font-size: 14px;
+    width: 90%;
+    /* background:transparent; */
+  }
+  mat-form-field{
+    border-radius: 50px;
+  }
+  /* .Form{
+    margin: 5vw;
+    padding: 5vw;
+    width: auto;
+}  */
+.add-button{
+  margin: 2vw 2vw;
+}
