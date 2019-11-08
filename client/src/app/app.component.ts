@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { SearchService } from 'src/app/services/search.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +15,11 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'client';
+
+  searchForm = new FormGroup({
+    searchInput: new FormControl('')
+  });
+
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -17,5 +27,21 @@ export class AppComponent {
       shareReplay()
     );
   fileReader = new FileReader();  
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+    search(): void {
+      let keyword: string = this.searchForm.value.searchInput;
+      if (keyword.length) {
+        console.log(keyword);
+        // this.searchService.searchResult(keyword)
+        //    .subscribe(res => console.log(res)
+        //    );
+        this.router.navigate(['/searchArticle/'+keyword])
+      }
+    }
+  
+
+  constructor(private breakpointObserver: BreakpointObserver,
+    private router: Router, 
+    private searchService: SearchService
+) {}
 }

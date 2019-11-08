@@ -1,6 +1,5 @@
 .sidenav-container {
     height: 100%;
-    /* z-index: 99999999999999; */
   }
   
   .sidenav {
@@ -14,7 +13,7 @@
   .mat-toolbar.mat-primary {
     position: sticky;
     top: 0;
-    /* z-index: 1; */
+    z-index: 1;
   }
   
   mat-sidenav-content{
@@ -26,3 +25,10 @@
 #toolbar{
   z-index: 99999999999999999;
 }
+  .Toolbar{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+

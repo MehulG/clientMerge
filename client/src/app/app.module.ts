@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,13 +34,14 @@ import { AttemptAssignmentComponent, DialogOverviewDialog } from './components/a
 import { UserDetailsComponent } from './components/user/user.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { CodemirrorModule } from 'ng2-codemirror';
-import { AceModule } from 'ngx-ace-wrapper';
-import { ACE_CONFIG } from 'ngx-ace-wrapper';
-import { AceConfigInterface } from 'ngx-ace-wrapper';
 
-const DEFAULT_ACE_CONFIG: AceConfigInterface = {
-};
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { QuillEditorModule } from 'ngx-quill-editor';
+import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { DisplayResultsComponent } from './components/display-results/display-results.component';
+import { FilterByTagsComponent } from './components/filter-by-tags/filter-by-tags.component';
+
 
 @NgModule({
   declarations: [
@@ -58,15 +58,23 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
     DialogOverviewDialog,
     AttemptAssignmentComponent,
     UserDetailsComponent,
-    EditUserComponent
+    EditUserComponent,
+    ArticlesComponent,
+    DisplayResultsComponent,
+    FilterByTagsComponent
   ],
+
+
   imports: [
-    AceModule,
-    CodemirrorModule,
     MatMenuModule,
     MatSelectModule,
     MatTabsModule,
     MatDialogModule,
+    MatCardModule,
+    QuillEditorModule,
+    MatChipsModule,
+    MatMenuModule,
+    MatSelectModule,
     MatExpansionModule,
     MatDividerModule,
     HttpClientModule,
@@ -90,16 +98,13 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
     FormsModule,
     MatMenuModule,
     TreeModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   entryComponents: [DialogOverviewExampleDialog, DialogOverviewDialog],
 
-  providers: [
-    {
-      provide: ACE_CONFIG,
-      useValue: DEFAULT_ACE_CONFIG
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

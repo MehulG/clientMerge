@@ -15,15 +15,15 @@ export class ArticleService {
     }
    
     public addArticle(article): Observable<any> {
-        return this.httpClient.post("https://localhost:5001/api/Article/",
-            {
-                "title": article.Title,
-                "userId": article.UserId,
-                "tags": article.Tags,
-                "content": article.Content
-            })
+        return this.httpClient.post("https://localhost:5001/api/Article/",article)
     }
-    public getArticleByTitle():Observable<any>{
-return this.httpClient.get(`https://localhost:5001/api/Article`)
+    public getArticleByID(id):Observable<any>{
+        return this.httpClient.get(`https://localhost:5001/api/Article/`+ id)
+    }
+    public updateArticle(id,article):Observable<any>{
+        return this.httpClient.put(`https://localhost:5001/api/Article/` + id, article)
+    }
+    public qwerty(id):Observable<any>{
+        return this.httpClient.get(`https://localhost:5001/api/Search/articles/user/` + id)
     }
 }
